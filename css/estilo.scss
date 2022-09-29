@@ -1,0 +1,312 @@
+@import "geral";
+@mixin link{
+    text-decoration: none;
+    color: #fff;
+}
+@mixin d-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+@mixin d-flex-between {
+    display: flex;
+    justify-content: space-between;
+   
+}
+@mixin d-flex-center {
+    display: flex;
+    align-items: center;
+}
+@mixin estilizacaogeral {
+    outline: none;
+    border: none;
+    cursor: pointer
+}
+.topo { 
+    @include d-flex-between();
+    align-items: center;
+    height: 30px;
+    color: $branco;
+    background-color: $escuro;
+    span {
+        margin-left: 15px;
+    }
+    .area-select {
+        margin-right: 20px;
+        select {
+            @include estilizacaogeral();
+            background: none;
+            font-size: 1.2em;
+            color: $branco;
+        }
+    }
+}
+header {
+    @include d-flex-between();
+    align-items: center;
+    background-color: $bege;
+    .area-logo {
+        color: $branco;
+        letter-spacing: -3px;
+        font-size: 1.3rem;
+        margin-left: 15px;
+        span {
+            color: $marrom;
+        }
+    }
+    nav {
+        ul {
+            padding: 15px;
+            @include d-flex-center();
+            li {
+                list-style: none;
+                margin-right: 18px;
+                font-size: 1.1em;
+                a {
+                    @include link();
+                }
+            }
+        }
+    }
+}
+main {
+    width: 100vw;
+    @include d-flex-column();
+    .sect-um {
+        background-image: $banner;
+        background-size: cover;
+        height: 420px;
+        @include d-flex-center();
+        justify-content: end;
+        .slider-textos {
+            @include d-flex-column();
+            align-items: center;
+            justify-content: center;
+            margin-right: 30px;
+            color: $marrom;
+            h2 {
+                font-size: 40px;
+                margin-bottom: 20px;
+                background-color: $branco;
+                padding: 15px;
+                font-weight: 300;
+                border-radius: 12px;
+                color: $marrom;
+            }
+            p {
+                font-size: 1.1em;
+                font-weight: 600;
+            }
+            button {
+                @include estilizacaogeral();
+                margin-top: 25px;
+                width: 200px;
+                padding: 15px;
+                font-size: 1.1em;
+                font-weight: 600;
+                background-color: $bege;
+                border-radius: 12px;
+                a {
+                    @include link();
+                }
+            }
+        }
+    }
+    .sect-dois {
+        padding: 15px;
+        @include d-flex-center();
+        justify-content: center;
+        .links {
+            @include d-flex-column();
+            img {
+                margin-left: 90px;
+            }
+            h2 {
+                font-size: 2rem;
+                color: $marrom;
+            }
+            ul {
+                li {
+                    margin-top: 20px;
+                    display: inline-block;
+                    list-style: none;
+                    margin-right: 25px;
+                    a {
+                        @include link();
+                        color: rgb(159, 156, 156);
+                    }
+                }
+            }
+        }
+    }
+    .sect-tres {
+        margin: 15px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        .produtos {
+            @include d-flex-between();
+            .churrasco {
+                margin-top: 15px;
+                background-color: #FBFAF6;
+                margin-left: 10px;
+                p {
+                    margin-bottom: 15px;
+                    color: #3C2313;
+                    font-weight: 600;
+                    text-align: center;
+                    &.preco {
+                        margin-top: 15px;
+                        color: $bege;
+                    }
+                }
+            }
+        }
+    }  
+}
+.sect-quatro {
+    margin: 15px 0 15px 0;
+    width: 100%;
+    @include d-flex-center();
+    justify-content: center;
+    flex-direction: column;
+    h2 {
+        color: $marrom;
+    }
+    .forms {
+        @include d-flex-column();
+        margin: 15px;
+        input {
+            @include estilizacaogeral();
+            background-color: $marrom;
+            border-radius: 12px;
+            width: 300px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+    }
+    .envio {
+        button {
+            width: 150px;
+            @include estilizacaogeral();
+            color: $branco;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 15px;
+            &.limpar {
+                background-color: $cinza;
+            }
+            &.enviar {
+                border-color: $bege;
+            }
+        }
+    }
+}
+footer {
+    width: 100%;
+    margin-top: 15px;
+    @include d-flex-column();
+    .email {
+        padding: 20px;
+        background-color: $bege;
+        @include d-flex-between();
+        align-items: center;
+        .txt {
+            h2{
+                color: $branco;
+            }
+        }
+        .form {
+            input {
+                @include estilizacaogeral();
+                margin-right: 15px;
+                padding: 10px;
+                border-radius: 20px;
+                width: 300px;
+            }
+            button {
+                @include estilizacaogeral();
+                border-radius: 20px;
+                background-color: $marrom;
+                color: $branco;
+                font-size: 1.1em;
+                font-weight: 600;
+                padding: 10px;
+                width: 120px;
+                margin: 12px;
+            }
+        }
+    }
+    .contatos {
+        @include d-flex-between();
+        align-items: center;
+        padding: 15px;
+        background-color: $marrom;
+        .listas{
+            ul{
+                li{
+                    list-style: none;
+                    margin-top: 10px;
+                    color: #fff;
+                    h3 {
+                        font-size: 1.4em;
+                    }
+                    p {
+                        font-size: 15px;
+                        text-align: center;
+                        color: $cinza;
+                    }
+                }
+            }
+        }
+        .area-logo {
+            h2 {
+                color: $branco;
+                span {
+                    color: $branco;
+                }
+            }
+        }
+    }
+    .direitos {
+        @include d-flex-center();
+        justify-content: center;
+        background-color: $escuro;
+        color: $branco;
+        padding: 10px;
+    }
+}
+@media(max-width: 800px){
+    header {
+        flex-direction: column;
+        .area-logo{
+            margin-top: 10px;
+        }
+        nav {
+            ul {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    }
+    main {
+        .sect-tres {
+            .produtos {
+                flex-wrap: wrap;
+                flex-direction: column;
+            }
+        }
+    }
+    footer {
+        .email {
+            flex-direction: column;
+            justify-content: flex-start;
+            .form {
+                @include d-flex-column();
+                justify-content: center;
+                button {
+                    margin-left: 100px;
+                }
+            }
+        }
+    }
+}
